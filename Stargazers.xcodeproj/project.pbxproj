@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4009DF291E8E9C9900481F4E /* LoadCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4009DF281E8E9C9900481F4E /* LoadCell.swift */; };
+		4009DF2B1E8EB2B000481F4E /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 4009DF2A1E8EB2B000481F4E /* README.md */; };
 		40B908D01E8D1376009E1D44 /* StargazerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B908CF1E8D1376009E1D44 /* StargazerCell.swift */; };
 		40B908D21E8D1522009E1D44 /* Startgazer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B908D11E8D1522009E1D44 /* Startgazer.swift */; };
 		40CBC5661E8AA0890017680F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CBC5651E8AA0890017680F /* AppDelegate.swift */; };
@@ -46,6 +47,7 @@
 		26DE88B8B238F3C045CA4F83 /* Pods_StargazersUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StargazersUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BF54BBCB10DD1535A56069B /* Pods_StargazersTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StargazersTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4009DF281E8E9C9900481F4E /* LoadCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadCell.swift; sourceTree = "<group>"; };
+		4009DF2A1E8EB2B000481F4E /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		40B908CF1E8D1376009E1D44 /* StargazerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StargazerCell.swift; sourceTree = "<group>"; };
 		40B908D11E8D1522009E1D44 /* Startgazer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Startgazer.swift; sourceTree = "<group>"; };
 		40CBC5621E8AA0890017680F /* Stargazers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Stargazers.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -100,6 +102,7 @@
 		40CBC5591E8AA0880017680F = {
 			isa = PBXGroup;
 			children = (
+				4009DF2A1E8EB2B000481F4E /* README.md */,
 				40CBC5641E8AA0890017680F /* Stargazers */,
 				40CBC5791E8AA0890017680F /* StargazersTests */,
 				40CBC5841E8AA0890017680F /* StargazersUITests */,
@@ -464,6 +467,7 @@
 				40B908D21E8D1522009E1D44 /* Startgazer.swift in Sources */,
 				4009DF291E8E9C9900481F4E /* LoadCell.swift in Sources */,
 				40CBC5941E8AA6580017680F /* StargazersTableViewController.swift in Sources */,
+				4009DF2B1E8EB2B000481F4E /* README.md in Sources */,
 				40B908D01E8D1376009E1D44 /* StargazerCell.swift in Sources */,
 				40CBC5681E8AA0890017680F /* FormViewController.swift in Sources */,
 				40CBC5661E8AA0890017680F /* AppDelegate.swift in Sources */,
