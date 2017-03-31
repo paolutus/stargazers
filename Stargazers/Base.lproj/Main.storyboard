@@ -1,14 +1,19 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ZE8-5V-mLX">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Enter Repository-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FormViewController" id="BYZ-38-t0r" customClass="FormViewController" customModule="Stargazers" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +21,153 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Owner" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Tin-Xt-vLn">
+                                <rect key="frame" x="16" y="96" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="alphabet" returnKeyType="continue" enablesReturnKeyAutomatically="YES"/>
+                                <connections>
+                                    <action selector="textFieldChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="5cc-C9-6we"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Repository" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rLw-UI-ZcQ">
+                                <rect key="frame" x="16" y="142" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="alphabet" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                <connections>
+                                    <action selector="textFieldChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="WDW-O1-xB2"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rIJ-g1-vZz">
+                                <rect key="frame" x="157" y="188" width="60" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="Q5I-ly-zQx"/>
+                                </constraints>
+                                <state key="normal" title="Go"/>
+                                <connections>
+                                    <action selector="goButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Nnn-AF-DXy"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="Tin-Xt-vLn" secondAttribute="trailing" id="6f8-89-GcV"/>
+                            <constraint firstItem="rIJ-g1-vZz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9eP-cV-Nmc"/>
+                            <constraint firstItem="Tin-Xt-vLn" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="32" id="B2j-IR-ZLh"/>
+                            <constraint firstItem="rLw-UI-ZcQ" firstAttribute="top" secondItem="Tin-Xt-vLn" secondAttribute="bottom" constant="16" id="R4Y-rg-wN1"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="rLw-UI-ZcQ" secondAttribute="trailing" id="RMa-W4-Mqz"/>
+                            <constraint firstItem="rIJ-g1-vZz" firstAttribute="top" secondItem="rLw-UI-ZcQ" secondAttribute="bottom" constant="16" id="dD4-Je-Y1J"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="rLw-UI-ZcQ" secondAttribute="leading" id="tLn-SL-sGS"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="Tin-Xt-vLn" secondAttribute="leading" id="yVk-eb-5UQ"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Enter Repository" id="dgb-Wv-fpy"/>
+                    <connections>
+                        <outlet property="goButton" destination="rIJ-g1-vZz" id="gVZ-Gd-lpA"/>
+                        <outlet property="ownerTextField" destination="Tin-Xt-vLn" id="5jy-s7-gtJ"/>
+                        <outlet property="repositoryTextField" destination="rLw-UI-ZcQ" id="ciD-2h-9e0"/>
+                        <segue destination="fjW-Wt-Y0B" kind="show" identifier="StargazersSegue" id="MqQ-dD-0B8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="924" y="36"/>
+        </scene>
+        <!--Stargazers-->
+        <scene sceneID="PRs-Cn-YcR">
+            <objects>
+                <tableViewController storyboardIdentifier="StargazersTableViewController" id="fjW-Wt-Y0B" customClass="StargazersTableViewController" customModule="Stargazers" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="52" sectionHeaderHeight="28" sectionFooterHeight="28" id="mLz-Sv-btv">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="StargazerCell" id="LoT-6B-Rb0" customClass="StargazerCell" customModule="Stargazers" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="52"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LoT-6B-Rb0" id="fAO-NB-twk">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="52"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="N9n-VR-SYR">
+                                            <rect key="frame" x="8" y="4" width="44" height="44"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="44" id="3Bu-Tl-hkJ"/>
+                                                <constraint firstAttribute="width" constant="44" id="MZg-mg-UV8"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IlA-hM-8lF">
+                                            <rect key="frame" x="60" y="16" width="307" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="IlA-hM-8lF" firstAttribute="centerY" secondItem="N9n-VR-SYR" secondAttribute="centerY" id="Ie9-yb-UEL"/>
+                                        <constraint firstAttribute="leadingMargin" secondItem="N9n-VR-SYR" secondAttribute="leading" id="Jvu-js-Ykd"/>
+                                        <constraint firstItem="IlA-hM-8lF" firstAttribute="leading" secondItem="N9n-VR-SYR" secondAttribute="trailing" constant="8" id="OAm-PG-5R1"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="IlA-hM-8lF" secondAttribute="trailing" id="aKi-Nm-dqm"/>
+                                        <constraint firstItem="N9n-VR-SYR" firstAttribute="centerY" secondItem="fAO-NB-twk" secondAttribute="centerY" id="ta0-Qm-ZOs"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="avatarImageView" destination="N9n-VR-SYR" id="vb8-eZ-G7j"/>
+                                    <outlet property="nameLabel" destination="IlA-hM-8lF" id="7M0-12-pYc"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LoadCell" id="D28-5l-oPW" customClass="LoadCell" customModule="Stargazers" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="80" width="375" height="52"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="D28-5l-oPW" id="JX6-YX-GBS">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="52"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JYS-U0-08j">
+                                            <rect key="frame" x="113" y="11" width="148" height="30"/>
+                                            <state key="normal" title="Load Next Stargazers"/>
+                                            <connections>
+                                                <action selector="loadButtonPressed:" destination="D28-5l-oPW" eventType="touchUpInside" id="fjH-zj-aDJ"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="JYS-U0-08j" firstAttribute="centerY" secondItem="JX6-YX-GBS" secondAttribute="centerY" id="iFV-t6-Xhh"/>
+                                        <constraint firstItem="JYS-U0-08j" firstAttribute="centerX" secondItem="JX6-YX-GBS" secondAttribute="centerX" id="wT1-8H-2r5"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="fjW-Wt-Y0B" id="NC0-sL-mzF"/>
+                            <outlet property="delegate" destination="fjW-Wt-Y0B" id="Vpj-w7-gXc"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Stargazers" id="FL4-nm-MOQ"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kRi-WT-ojc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1788" y="35.532233883058474"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="8cA-lJ-T7d">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ZE8-5V-mLX" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="7Fn-wX-lw2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="J3t-bM-Qt9"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hGA-lF-sJE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="44" y="36.431784107946029"/>
         </scene>
     </scenes>
 </document>
