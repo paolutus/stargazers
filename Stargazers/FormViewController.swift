@@ -64,11 +64,6 @@ class FormViewController: UIViewController, UITextFieldDelegate {
 		goButton.isEnabled = false
 		ownerTextField.delegate = self
 		repositoryTextField.delegate = self
-		
-		// TODO: Debug
-		ownerTextField.text = "matteocrippa"
-		repositoryTextField.text = "awesome-swift"
-		goButton.isEnabled = true
 	}
 
 	// check input data by loading repo details
