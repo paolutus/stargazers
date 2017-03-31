@@ -11,6 +11,15 @@ import PKHUD
 import Alamofire
 import SwiftyJSON
 
+// available segues
+enum StargazersSegue: String {
+	case stargazers = "StargazersSegue"
+	
+	var identifier : String {
+		return self.rawValue
+	}
+}
+
 class FormViewController: UIViewController, UITextFieldDelegate {
 
 	@IBOutlet weak var ownerTextField: UITextField!

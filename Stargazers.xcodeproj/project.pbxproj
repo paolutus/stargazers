@@ -11,6 +11,7 @@
 		4009DF2B1E8EB2B000481F4E /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 4009DF2A1E8EB2B000481F4E /* README.md */; };
 		40B908D01E8D1376009E1D44 /* StargazerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B908CF1E8D1376009E1D44 /* StargazerCell.swift */; };
 		40B908D21E8D1522009E1D44 /* Startgazer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B908D11E8D1522009E1D44 /* Startgazer.swift */; };
+		40C7BC581E8EC249002621E7 /* GitHubEntryPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C7BC571E8EC249002621E7 /* GitHubEntryPoint.swift */; };
 		40CBC5661E8AA0890017680F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CBC5651E8AA0890017680F /* AppDelegate.swift */; };
 		40CBC5681E8AA0890017680F /* FormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CBC5671E8AA0890017680F /* FormViewController.swift */; };
 		40CBC56B1E8AA0890017680F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40CBC5691E8AA0890017680F /* Main.storyboard */; };
@@ -50,6 +51,7 @@
 		4009DF2A1E8EB2B000481F4E /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		40B908CF1E8D1376009E1D44 /* StargazerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StargazerCell.swift; sourceTree = "<group>"; };
 		40B908D11E8D1522009E1D44 /* Startgazer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Startgazer.swift; sourceTree = "<group>"; };
+		40C7BC571E8EC249002621E7 /* GitHubEntryPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubEntryPoint.swift; sourceTree = "<group>"; };
 		40CBC5621E8AA0890017680F /* Stargazers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Stargazers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40CBC5651E8AA0890017680F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		40CBC5671E8AA0890017680F /* FormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormViewController.swift; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 				40B908CF1E8D1376009E1D44 /* StargazerCell.swift */,
 				40B908D11E8D1522009E1D44 /* Startgazer.swift */,
 				4009DF281E8E9C9900481F4E /* LoadCell.swift */,
+				40C7BC571E8EC249002621E7 /* GitHubEntryPoint.swift */,
 			);
 			path = Stargazers;
 			sourceTree = "<group>";
@@ -464,6 +467,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40C7BC581E8EC249002621E7 /* GitHubEntryPoint.swift in Sources */,
 				40B908D21E8D1522009E1D44 /* Startgazer.swift in Sources */,
 				4009DF291E8E9C9900481F4E /* LoadCell.swift in Sources */,
 				40CBC5941E8AA6580017680F /* StargazersTableViewController.swift in Sources */,
