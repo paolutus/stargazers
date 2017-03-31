@@ -6,6 +6,8 @@ The list is paged and the avatars are loaded asynchronously with default caching
 Github api are used throughout the project.
 The main functions of the two view controllers are also tested with automatic Uint Test.
 
+Follows a link to video of the application in execution: [Dropbox - Stargazers.mp4](https://www.dropbox.com/s/rj07pk8bdqrof9b/Stargazers.mp4?dl=0)
+
 ## Technologies
 Language: Swift 3.1
 Xcode: version 8.3
