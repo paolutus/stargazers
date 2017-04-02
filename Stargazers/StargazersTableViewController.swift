@@ -8,47 +8,20 @@
 
 import UIKit
 import PKHUD
-import Alamofire
 import SwiftyJSON
 
 class StargazersTableViewController: UITableViewController {
 	var stargazers = [Stargazer]()
-	var owner : String!
-	var repo : String!
 	var currentPage = 0
-	var perPage = 50
 	
-	var repoDetails : JSON? {
-		didSet {
-			guard let details = repoDetails else {
-				stargazers = [Stargazer]()
-				self.tableView.reloadData()
-				return
-			}
-			
-			guard let owner = details["owner"]["login"].string else {
-				fatalError("Repository Description Data Format Error")
-			}
-			self.owner = owner
-		
-			guard let repo = details["name"].string else {
-				fatalError("Repository Description Data Format Error")
-			}
-			self.repo = repo
-			
-			self.navigationItem.title = "\(owner)/\(repo)"
-		}
-	}
-
     override func viewDidLoad() {
         super.viewDidLoad()
+		
+		self.navigationItem.title = "\(self.stargazerDelegate.owner)/\(self.stargazerDelegate.repo)"
     }
 	
 	override func viewDidAppear(_ animated: Bool) {
 		super.viewDidAppear(animated)
-		guard repoDetails != nil else {
-			return
-		}
 		loadNextPage(nil)
 	}
 
@@ -60,26 +33,18 @@ class StargazersTableViewController: UITableViewController {
 	// Manage pagination
 	func loadNextPage(_ callback: ((Bool)->())?) {
 		currentPage += 1
-		if let url = GitHubEntryPoint.stargazers(owner: owner, repo: repo, page: currentPage, perPage: perPage).url {
-			HUD.show(HUDContentType.labeledProgress(title: "", subtitle: "Loading Stargazers..."))
+		HUD.show(HUDContentType.labeledProgress(title: "", subtitle: "Loading Stargazers..."))
 			
-			Alamofire.request(url).validate().responseJSON { response in
-				switch response.result {
-				case .success(let jsonData):
-					let json = JSON(jsonData)
-					let pagedStargazers = Stargazer.createStargazer(fromJSON: json)
-					self.stargazers.append(contentsOf: pagedStargazers)
-					self.tableView.reloadData()
-					HUD.hide()
-					callback?(true)
-				case .failure(let error):
-					HUD.flash(HUDContentType.labeledError(title: "Error", subtitle: error.localizedDescription), delay: 3.0)
-					callback?(false)
-				}
+		self.stargazerDelegate.loadStargazersPage(currentPage: currentPage) { response in
+			switch response {
+			case .ok(let json):
+				let pagedStargazers = Stargazer.createStargazer(fromJSON: json)
+				self.stargazers.append(contentsOf: pagedStargazers)
+				self.tableView.reloadData()
+				HUD.hide()
+			case .error(let message):
+				HUD.flash(HUDContentType.labeledError(title: "Error", subtitle: message), delay: 3.0)
 			}
-		} else {
-			HUD.flash(HUDContentType.labeledError(title: "Error", subtitle: "Invalid URL"), delay: 3.0)
-			callback?(false)
 		}
 	}
 	

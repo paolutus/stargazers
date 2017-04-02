@@ -25,12 +25,16 @@ class StargazersTests: XCTestCase {
     }
     
     func testDescription() {
-		let formViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "FormViewController") as! FormViewController
 		let descriptionExpectation = expectation(description: "description")
 		
-		formViewController.checkRepo(owner: owner, repo: repo) { ok, JSON in
-			XCTAssert(ok, "Unable to check repo")
-			descriptionExpectation.fulfill()
+		StargazersSingleton.sharedInstance.useRepo(owner: owner, repo: repo) { response in
+			switch response {
+			case .ok(_):
+				descriptionExpectation.fulfill()
+			case .error(let message):
+				XCTFail("Unable to use repo: \(message)")
+				descriptionExpectation.fulfill()
+			}
 		}
 		
 		waitForExpectations(timeout: 3) { error in
@@ -39,28 +43,20 @@ class StargazersTests: XCTestCase {
     }
 	
 	func testStargazers() {
-		let stargazersViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "StargazersTableViewController") as! StargazersTableViewController
 		let stargazersExpectation = expectation(description: "stargazers")
-		stargazersViewController.owner = owner
-		stargazersViewController.repo = repo
-		
-		stargazersViewController.loadNextPage() { ok in
-			XCTAssert(ok, "Unable to load Stargazers")
-			stargazersExpectation.fulfill()
+
+		StargazersSingleton.sharedInstance.loadStargazersPage(currentPage: 1) { response in
+			switch response {
+			case .ok(_):
+				stargazersExpectation.fulfill()
+			case .error(let message):
+				XCTFail("Unable to load Stargazers: \(message)")
+				stargazersExpectation.fulfill()
+			}
 		}
 		
 		waitForExpectations(timeout: 3) { error in
 			XCTAssertNil(error, "GitHub Stargazers Timeout")
 		}
 	}
-	
-	
-    
-    /*func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }*/
-    
 }

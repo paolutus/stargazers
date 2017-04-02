@@ -4,7 +4,7 @@ This is a demo project that shows the stargazers of a given github repository.
 The user give the owner and repository names as input, then a description of the repository is loaded to validate the input and, if it is passed, a list of repository stargazers is shown.  
 The list is paged and the avatars are loaded asynchronously with default caching.  
 Github api are used throughout the project.  
-The main functions of the two view controllers are also tested with automatic Uint Test.  
+The Singleton main functions are also unit tested.     
 
 Follows a link to video of the application in execution: [Dropbox - Stargazers.mp4](https://www.dropbox.com/s/rj07pk8bdqrof9b/Stargazers.mp4?dl=0)
 
